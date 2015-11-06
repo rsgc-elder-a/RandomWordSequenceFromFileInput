@@ -31,7 +31,7 @@ Change the code so that the program loads the text file you have found.
 
 // Set location of file
 // File obtained from:
-// http://www.presidentialrhetoric.com/campaign/speeches/bush_oct19.html
+// http://www.p8residentialrhetoric.com/campaign/speeches/bush_oct19.html
 // Only edits:
 // - Removed text "AUDIENCE: ..."
 // - Removed text "(Applause.)"
@@ -111,22 +111,62 @@ Goal #1
 
 My algorithm
 ------------
-
+1.loup over the array to count the amount of words in the speech 
+2. loup over the array to determine the amount of words there are and then divide them by the total amount of words and then put those values in another array
+3. loup over this array to create upper values that stack to give you the percentage values of each of the words
 
 My assumptions
 --------------
-
+-i am oging to have to use some syntax they i do not fully understand 
 
 Probable data structures
 ------------------------
-
+-i will use float and sting in order to hold the values of words and the disitnc values of the each of the letter percentages 
 
 */
 
 // Implement Goal #1 below...
 
+words.count
+
+//var letterCounts = [Character: words]()
+
+//for letter in
+
+var wordsCounts = [String: Int]()
+//Building the dictonary of word counts (step 1 above)
+for banana in words {
+    banana
+}
+
+//for word in words.characters {
+
+//var countingup = 0
+//while(countingup < 100){
+//    
+//    if wordsCounts == nil {
+//    wordsCounts[]
+//    } else {
+//    wordsCounts[]! = wordsCounts[]! + 1
+//    }
+    
+    
+    
+    
+//    if letterCounts[letter] == nil {
+//    letterCounts[letter] = 1        // first time for this letter!
+//    } else {
+//    // we KNOW this letter is in the dictionary. WE KNOW IT
+//    // ... so just add 1 to the current count
+//    letterCounts[letter]! = letterCounts[letter]! + 1
+//    }
+//    
+//}
 
 
+
+//    countingup == countingup + 1
+//}
 /*: 
 
 ## Goal 2
@@ -164,11 +204,12 @@ Goal #2
 
 My algorithm
 ------------
-
+-use the funciton to create a random value thats between certian numbers and the sentance will end with a certian legnth 
+-loup over the ealryer algortih only this amount of times 
 
 My assumptions
 --------------
-
+-use the arc random funciton 
 
 
 */
