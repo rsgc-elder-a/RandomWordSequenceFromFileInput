@@ -136,37 +136,45 @@ words.count
 var wordsCounts = [String: Int]()
 //Building the dictonary of word counts (step 1 above)
 for banana in words {
-    banana
+    if wordsCounts[banana] == nil {
+    wordsCounts[banana] = 1
+    } else {
+        wordsCounts[banana]! = wordsCounts[banana]! + 1
+    }
 }
 
-//for word in words.characters {
+var percentage = [String: Float]()
 
-//var countingup = 0
-//while(countingup < 100){
-//    
-//    if wordsCounts == nil {
-//    wordsCounts[]
-//    } else {
-//    wordsCounts[]! = wordsCounts[]! + 1
-//    }
-    
-    
-    
-    
-//    if letterCounts[letter] == nil {
-//    letterCounts[letter] = 1        // first time for this letter!
-//    } else {
-//    // we KNOW this letter is in the dictionary. WE KNOW IT
-//    // ... so just add 1 to the current count
-//    letterCounts[letter]! = letterCounts[letter]! + 1
-//    }
-//    
-//}
+for (words, counts) in wordsCounts {
+    percentage[words] = Float(counts) / 5177 * 100
+}
+
+
+var outputString = ""
 
 
 
-//    countingup == countingup + 1
-//}
+for i in 1...20 {
+    
+    let newrandomvalue =  arc4random_uniform(1000)
+    let newrandomvalueFloat = Float(newrandomvalue)/10
+    
+    var upperValue: Float = 0.0
+    for (letter, probiblites) in percentage {
+        upperValue += probiblites
+        
+        if(newrandomvalueFloat < upperValue){
+            outputString +=  String(letter)
+            break
+        }
+    }
+    
+}
+
+outputString
+
+
+
 /*: 
 
 ## Goal 2
@@ -204,18 +212,46 @@ Goal #2
 
 My algorithm
 ------------
--use the funciton to create a random value thats between certian numbers and the sentance will end with a certian legnth 
--loup over the ealryer algortih only this amount of times 
+-make the string end whenever there is a word with a pieroid in it 
 
 My assumptions
 --------------
--use the arc random funciton 
+-going to need to detect that there is a pieriod somehow 
 
 
 */
 
 
 // Implement Goal #2 below...
+
+
+
+
+//var counting = 0
+//while(counting < 100){
+//    
+//    let newrandomvalue =  arc4random_uniform(1000)
+//    let newrandomvalueFloat = Float(newrandomvalue)/10
+//    
+//    var upperValue: Float = 0.0
+//    for (letter, probiblites) in percentage {
+//        upperValue += probiblites
+//        
+//        if(newrandomvalueFloat < upperValue){
+//            outputString +=  String(letter)
+//            break
+//        }
+//    }
+//    counting = counting + 1
+//    if(outputString[outputString.endIndex.predecessor()] == "." ) {
+//        
+//        counting = 100
+//        
+//    }
+//}
+
+
+
 
 
 /*:
@@ -264,4 +300,49 @@ My assumptions
 
 // Implement Goal #3 below...
 
+var counting = 0
+var countingin = 0
+while(counting < 100){
+    
+    while(countingin < 9) {
+    let newrandomvalue =  arc4random_uniform(1000)
+    let newrandomvalueFloat = Float(newrandomvalue)/10
+    
+    var upperValue: Float = 0.0
+    for (letter, probiblites) in percentage {
+        upperValue += probiblites
+        
+        if(newrandomvalueFloat < upperValue){
+            outputString +=  String(letter)
+            break
+        }
+    }
+        countingin = countingin + 1
+}
+    
+    let newrandomvalue =  arc4random_uniform(1000)
+    let newrandomvalueFloat = Float(newrandomvalue)/10
+    
+    var upperValue: Float = 0.0
+    for (letter, probiblites) in percentage {
+        upperValue += probiblites
+        
+        if(newrandomvalueFloat < upperValue){
+            outputString +=  String(letter)
+            break
+        }
+    }
+
+    
+    
+    
+    counting = counting + 1
+    if(outputString[outputString.endIndex.predecessor()] == "." ) {
+        
+        counting = 100
+    }
+}
+
+
+outputString
 
